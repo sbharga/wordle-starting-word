@@ -6,10 +6,7 @@ VOWELS = ['a', 'e', 'i', 'o', 'u']
 with open("words.txt", 'r') as file:
     RAW_WORDS = [line.strip('\n') for line in file.readlines()]
 
-LETTERS = {}
-for letter in string.ascii_lowercase:
-    LETTERS[letter] = [0, 0, 0, 0, 0]
-
+LETTERS = {letter: [0, 0, 0, 0, 0] for letter in string.ascii_lowercase}
 for word in RAW_WORDS:
     for index, char in enumerate(word):
         LETTERS[char][index] += 1
